@@ -1,11 +1,9 @@
 from fastapi import FastAPI
+from v1.api import api_router
 
 app = FastAPI()
+app.include_router(api_router)
 
 @app.get("/")
 def read_root():
     return {"message": "Welcome to ConnectionTherapy API"}
-
-@app.get("/health")
-def read_root():
-    return {"status": "ok"}
