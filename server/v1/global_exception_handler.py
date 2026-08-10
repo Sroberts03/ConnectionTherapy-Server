@@ -1,7 +1,7 @@
 from fastapi import Request, FastAPI
 from fastapi.responses import JSONResponse
 from datetime import datetime
-from database import supabase_client
+from v1.database import supabase_client
 from v1.error.error_dao import ErrorDao
 from v1.global_exceptions.base_exception import BaseException
 import traceback
