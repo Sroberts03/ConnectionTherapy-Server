@@ -1,5 +1,6 @@
+from typing import List
 from v1.quote.quote_dao import QuoteDao
-from v1.quote.types.Quote import Quote
+from v1.quote.types.quote import Quote
 import random
 
 class QuoteService:
@@ -7,6 +8,6 @@ class QuoteService:
         self.quote_dao = quote_dao
     
     def get_random_quote(self) -> Quote:
-        quotes = self.quote_dao.get_all_quotes()
-        random_quote_data = random.choice(quotes)
-        return Quote(**random_quote_data)
+        quotes: List[Quote] = self.quote_dao.get_all_quotes()
+        random_quote = random.choice(quotes)
+        return random_quote
